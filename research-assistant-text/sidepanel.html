@@ -1,0 +1,65 @@
+<!-- sidepanel.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Assistant</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="title">🔍 Research Assistant</h1>
+
+      <label for="operation" class="label">Operation</label>
+      <select id="operation" class="input">
+        <option value="summarize">📄 Summarize</option>
+        <option value="suggest">💡 Suggest Topics</option>
+        <option value="translate">🌐 Translate</option>
+        <option value="explain">📘 Explain Simply</option>
+        <option value="rephrase">✍️ Rephrase</option>
+      </select>
+
+      <div id="languageSection" class="hidden">
+        <label for="language" class="label">Language</label>
+        <select id="language" class="input">
+          <option value="Telugu">Telugu</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Spanish">Spanish</option>
+          <option value="French">French</option>
+          <option value="German">German</option>
+          <option value="Japanese">Japanese</option>
+        </select>
+      </div>
+
+      <div class="notes-header">
+        <label for="notes" class="label">Notes</label>
+        <button id="toggleNotesBtn" class="btn small">↕ Expand Notes</button>
+      </div>
+
+      <textarea id="notes" placeholder="Take notes here..." class="textarea"></textarea>
+
+      <div class="button-group">
+        <button id="saveNotesBtn" class="btn primary">💾 Save</button>
+        <button id="clearAllBtn" class="btn">🧹 Clear</button>
+        <div class="dropdown-wrapper">
+          <button class="btn">📁 Export ▼</button>
+          <div class="dropdown">
+            <button id="exportPdfBtn" class="btn">PDF</button>
+            <button id="exportMdBtn" class="btn">Markdown</button>
+          </div>
+        </div>
+      </div>
+
+      <button id="summarizeBtn" class="btn full">🚀 Process</button>
+      <div id="results" class="results"></div>
+      <div id="statusMessage" class="status-message"></div>
+      <button id="copyBtn" class="btn hidden">📋 Copy</button>
+    </div>
+  </div>
+
+  <script src="scripts/html2pdf.bundle.min.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
